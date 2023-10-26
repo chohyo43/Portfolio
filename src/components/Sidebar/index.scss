@@ -1,3 +1,4 @@
+/* This is the original box that contains everything, so the black box  */
 .nav-bar{
     background: #181818;
     width: 60px;
@@ -22,6 +23,7 @@
             }
         }
     }
+
     nav {
         display: block;
         text-align: center;
@@ -30,7 +32,7 @@
         top: 50%;
         margin-top: -120px;
         width: 100%;
-        
+        /* This is to make the images for Home, Contact, etc dissapear when hovering*/
         a {
             font-size: 22px;
             color: #4d4d4e;
@@ -39,17 +41,60 @@
             height: 51px;
             position: relative;
             text-decoration: none;
-        }
 
-        i{
-            transition: all 0.3s ease-out;
-        }
-        &:hover {
-            color: #ffd700;
-            
-            svg{
-                opacity: 0%;
+            i {
+                transition: all 0.3s ease-out;
+            }
+            /* What happens when you hover over the icons, while cursor is on opac is 0%, after hover is over back to 1  */
+            &:hover {
+                color: #ffd700;
+                
+                svg {
+                    opacity: 0%;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        
+            /* Once hovering, it will the opac of the image will be 0 and the children will appear  */
+            &:after {
+                content: '';
+                font-size: 9px;
+                letter-spacing: 2px;
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                text-align: center;
+                opacity: 0;
+                transition: all 0.3s ease-out;
+            }
+
+            &:first-child{
+                &::after{
+                    content: 'HOME';
+                }
             }
         }
+
+        a.about-link {
+            &:after {
+                content: 'ABOUT';
+            }
         }
+
+        a.contact-link {
+            &:after {
+                content: 'CONTACT';
+            }
+        }
+
+        a.active {
+            svg {
+                color: #ffd700
+            }
+        }
+    }
 }
