@@ -1,3 +1,4 @@
+/* This is the original box that contains everything, so the black box  */
 .nav-bar{
     background: #181818;
     width: 60px;
@@ -44,7 +45,7 @@
             i {
                 transition: all 0.3s ease-out;
             }
-
+            /* What happens when you hover over the icons, while cursor is on opac is 0%, after hover is over back to 1  */
             &:hover {
                 color: #ffd700;
                 
@@ -57,7 +58,7 @@
                 }
             }
         
-
+            /* Once hovering, it will the opac of the image will be 0 and the children will appear  */
             &:after {
                 content: '';
                 font-size: 9px;
@@ -75,6 +76,24 @@
                 &::after{
                     content: 'HOME';
                 }
+            }
+        }
+
+        a.about-link {
+            &:after {
+                content: 'ABOUT';
+            }
+        }
+
+        a.contact-link {
+            &:after {
+                content: 'CONTACT';
+            }
+        }
+
+        a.active {
+            svg {
+                color: #ffd700
             }
         }
     }
