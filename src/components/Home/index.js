@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import LogoTitle from '../../assets/images/logo-s.png';
+import LogoTitle from '../../assets/images/Cherry.jpg';
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
-import Logo from './Logo'
+
 
 const Home = () => {
     {/* This is to create an animate state called */}
@@ -37,11 +37,11 @@ const Home = () => {
                 strArray={jobArray} idx={22}/>
                 </h1>
                 <h2>
-                    Frontend Developer / JavaScript Expert
+                     Frontend Developer 
                 </h2>
                 <Link to="/contact" className='flat-button'> Contact Me </Link>
             </div>
-            <Logo></Logo>
+            
         </div>
     );
 }
